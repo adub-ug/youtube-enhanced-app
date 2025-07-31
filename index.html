@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>YouTube Enhanced App</title>
+  <meta name="theme-color" content="#000000">
+  <meta name="description" content="A YouTube app with ad-blocking, sponsor skipping, and privacy features">
+  <link rel="manifest" href="/manifest.json">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+    #player {
+      width: 100%;
+      max-height: 70vh;
+      aspect-ratio: 16/9;
+    }
+    #search-bar {
+      width: 100%;
+      max-width: 600px;
+    }
+    .loading {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 24px;
+      z-index: 1000;
+    }
+    #video-list {
+      width: 100%;
+      max-width: 600px;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col items-center">
+  <div id="loading" class="loading">Loading YouTube...</div>
+  <div class="w-full max-w-4xl p-4">
+    <input id="search-bar" type="text" placeholder="Search video title (e.g., Rick Astley Never Gonna Give You Up)" class="p-2 mb-4 text-black rounded">
+    <div id="video-list" class="mt-4 grid grid-cols-1 gap-4"></div>
+    <div id="player"></div>
+  </div>
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="/app.js"></script>
+</body>
+</html>
